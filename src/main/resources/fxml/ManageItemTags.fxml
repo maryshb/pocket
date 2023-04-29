@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import org.controlsfx.control.CheckComboBox?>
+<DialogPane fx:id="manageItemTagsDialog" maxHeight="-Infinity" maxWidth="-Infinity"
+  minHeight="-Infinity" minWidth="-Infinity" prefHeight="285.0" prefWidth="444.0" stylesheets="@../styles/Main.css"
+  xmlns="http://javafx.com/javafx/18"
+  xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="pl.wszib.edu.pocketdesktop.controller.ManageItemTagsController">
+  <expandableContent>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0"/>
+  </expandableContent>
+  <buttonTypes>
+    <ButtonType fx:constant="APPLY"/>
+    <ButtonType fx:constant="CANCEL"/>
+  </buttonTypes>
+  <header>
+    <VBox prefHeight="242.0" prefWidth="444.0">
+      <children>
+        <GridPane prefHeight="50.0" prefWidth="400.0">
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0"
+              prefWidth="133.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0"
+              prefWidth="146.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="78.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0"
+              prefWidth="100.0"/>
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+          </rowConstraints>
+          <children>
+            <CheckComboBox fx:id="chosenTagsCombo" prefHeight="25.0" prefWidth="163.0"
+              GridPane.rowIndex="1">
+              <opaqueInsets>
+                <Insets/>
+              </opaqueInsets>
+              <GridPane.margin>
+                <Insets left="20.0"/>
+              </GridPane.margin>
+            </CheckComboBox>
+            <TextField fx:id="newTagsTextField" prefHeight="25.0" prefWidth="135.0"
+              promptText="Add new tags..." GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <GridPane.margin>
+                <Insets left="10.0" right="10.0"/>
+              </GridPane.margin>
+            </TextField>
+            <Button fx:id="addChosenTagsButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY"
+              maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+              mnemonicParsing="false" onAction="#addChosenTags" prefHeight="25.0" prefWidth="25.0"
+              GridPane.columnIndex="2" GridPane.rowIndex="1">
+              <graphic>
+                <MaterialDesignIconView id="plusIcon" boundsType="VISUAL" glyphName="PLUS" size="18"
+                  stroke="BLACK" textAlignment="CENTER" wrappingWidth="16.0"/>
+              </graphic>
+            </Button>
+            <Button fx:id="clearTagsButton" mnemonicParsing="false" onAction="#clearAllTags"
+              text="Clear Tags" GridPane.columnIndex="3" GridPane.halignment="RIGHT"
+              GridPane.rowIndex="1">
+              <GridPane.margin>
+                <Insets right="20.0"/>
+              </GridPane.margin>
+            </Button>
+          </children>
+        </GridPane>
+        <TableView fx:id="tagsTable" editable="true" prefHeight="184.0" prefWidth="404.0">
+          <columns>
+            <TableColumn fx:id="colTag" prefWidth="331.0" resizable="false" text="Tag"/>
+            <TableColumn fx:id="colDelete" minWidth="0.0" prefWidth="72.0" resizable="false"
+              text="Delete"/>
+          </columns>
+          <VBox.margin>
+            <Insets left="20.0" right="20.0"/>
+          </VBox.margin>
+        </TableView>
+      </children>
+    </VBox>
+  </header>
+</DialogPane>

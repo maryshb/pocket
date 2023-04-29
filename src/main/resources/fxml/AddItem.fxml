@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.CheckComboBox?>
+<DialogPane fx:id="addItemDialog" headerText="Add Item" maxHeight="-Infinity" maxWidth="-Infinity"
+  minHeight="-Infinity" minWidth="-Infinity" prefHeight="190.0" prefWidth="315.0"
+  xmlns="http://javafx.com/javafx/18"
+  xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="pl.wszib.edu.pocketdesktop.controller.AddItemController">
+  <header>
+    <AnchorPane prefHeight="150.0">
+      <children>
+        <TextField id="itemUrl" fx:id="itemUrl" layoutX="33.0" layoutY="30.0" prefHeight="25.0"
+          prefWidth="260.0" promptText="Enter url..." AnchorPane.leftAnchor="35.0"
+          AnchorPane.rightAnchor="35.0"/>
+        <TextField id="itemTitle" fx:id="itemTitle" layoutX="33.0" layoutY="68.0" prefHeight="25.0"
+          prefWidth="260.0" promptText="Enter item title..." AnchorPane.leftAnchor="35.0"
+          AnchorPane.rightAnchor="35.0"/>
+        <CheckComboBox fx:id="itemTags" layoutX="145.0" layoutY="106.0" prefHeight="25.0"
+          prefWidth="135.0" AnchorPane.leftAnchor="145.0" AnchorPane.rightAnchor="35.0"/>
+        <Text layoutX="37.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Choose Tags:" wrappingWidth="108.13671875"/>
+      </children>
+    </AnchorPane>
+  </header>
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0"/>
+  </content>
+  <expandableContent>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0"/>
+  </expandableContent>
+  <buttonTypes>
+    <ButtonType fx:constant="APPLY"/>
+    <ButtonType fx:constant="CANCEL"/>
+  </buttonTypes>
+</DialogPane>

@@ -1,0 +1,9 @@
+.table-cell {
+  -fx-alignment: CENTER;
+  -fx-font-family: "Segoe UI";
+}
+.table-view {
+  -fx-table-cell-border-color: transparent;
+  -fx-selection-bar: rgba(110, 191, 248, 0.57)
+}
+
