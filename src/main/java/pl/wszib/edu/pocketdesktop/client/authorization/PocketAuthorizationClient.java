@@ -47,12 +47,12 @@ public class PocketAuthorizationClient {
   public String getAuthorizationUrl() {
 
     PocketRequestTokenRequest requestTokenRequest = new PocketRequestTokenRequest(consumerKey,
-        "http://google.pl");
+        "https://google.pl");
     PocketRequestTokenResponse requestTokenResponse = getRequestToken(requestTokenRequest);
     requestToken = requestTokenResponse.getCode();
 
     return POCKET_URL + "/auth/authorize?request_token=" + requestToken
-        + "&redirect_uri=http://google.pl";
+        + "&redirect_uri=https://google.pl";
   }
 
   public void setAccessToken() {

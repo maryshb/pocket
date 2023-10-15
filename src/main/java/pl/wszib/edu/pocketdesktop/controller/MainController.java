@@ -32,7 +32,6 @@ import org.controlsfx.control.CheckComboBox;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
-import pl.wszib.edu.pocketdesktop.config.FxmlView;
 import pl.wszib.edu.pocketdesktop.client.add.AddClient;
 import pl.wszib.edu.pocketdesktop.client.download.ItemDownloader;
 import pl.wszib.edu.pocketdesktop.client.modify.ModifyClient;
@@ -40,6 +39,7 @@ import pl.wszib.edu.pocketdesktop.client.modify.model.ModifyOption;
 import pl.wszib.edu.pocketdesktop.client.retrieve.RetrieveClient;
 import pl.wszib.edu.pocketdesktop.client.retrieve.model.ItemsFilterOptions;
 import pl.wszib.edu.pocketdesktop.client.retrieve.model.response.Item;
+import pl.wszib.edu.pocketdesktop.config.FxmlView;
 import pl.wszib.edu.pocketdesktop.config.StageManager;
 
 @Controller
@@ -88,7 +88,6 @@ public class MainController {
   @Lazy
   @Autowired
   private StageManager stageManager;
-  
   private final RetrieveClient retrieveClient;
   private final AddClient addClient;
   private final ModifyClient modifyClient;

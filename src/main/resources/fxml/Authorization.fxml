@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.web.WebView?>
-<VBox prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx"
-  xmlns:fx="http://javafx.com/fxml/1"
-  fx:controller="pl.wszib.edu.pocketdesktop.controller.AuthorizationController">
-  <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0"
-      VBox.vgrow="ALWAYS">
-      <children>
-        <WebView fx:id="webView" prefHeight="900.0" prefWidth="1600.0"/>
-      </children>
-    </AnchorPane>
-  </children>
-</VBox>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import pl.wszib.edu.pocketdesktop.config.FxmlBrowserView?>
+<BorderPane
+    prefHeight="600" prefWidth="1225"
+    fx:controller="pl.wszib.edu.pocketdesktop.controller.AuthorizationController" 
+    xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <TextField fx:id="textField" text="https://www.google.com"
+            onAction="#loadUrl"/>
+    </top>
+    <center>
+        <FxmlBrowserView fx:id="browserView"/>
+    </center>
+</BorderPane>

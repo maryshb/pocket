@@ -1,7 +1,6 @@
 package pl.wszib.edu.pocketdesktop;
 
 import javafx.application.Application;
-import javafx.application.HostServices;
 import javafx.stage.Stage;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -14,7 +13,6 @@ public class PocketDesktopApplication extends Application {
 
   protected ConfigurableApplicationContext springContext;
   protected StageManager stageManager;
-  private HostServices hostServices;
 
   public static void main(final String[] args) {
     Application.launch(args);
@@ -23,7 +21,6 @@ public class PocketDesktopApplication extends Application {
   @Override
   public void init() {
 
-    hostServices = getHostServices();
     springContext = springBootApplicationContext();
   }
 

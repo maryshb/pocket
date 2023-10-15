@@ -3,21 +3,34 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
+  <groupId>pl.wszib.edu</groupId>
+  <artifactId>pocketDesktop</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>pocket-desktop</name>
+  <description>pocket-desktop</description>
+
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.5.6</version>
+    <version>3.1.4</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-  <groupId>pl.wszib.edu</groupId>
-  <artifactId>pocket-desktop</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>pocket-desktop</name>
-  <description>pocket-desktop</description>
+
   <properties>
-    <java.version>1.8</java.version>
+    <java.version>21</java.version>
+    <javafx.version>21</javafx.version>
     <spring-cloud.version>2021.0.5</spring-cloud.version>
   </properties>
+
+  <repositories>
+    <repository>
+      <id>com.teamdev</id>
+      <url>https://europe-maven.pkg.dev/jxbrowser/releases</url>
+    </repository>
+  </repositories>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -27,6 +40,7 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -50,11 +64,6 @@
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
@@ -62,7 +71,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.24</version>
+      <version>1.18.30</version>
     </dependency>
     <dependency>
       <groupId>org.apache.maven.plugins</groupId>
@@ -83,7 +92,7 @@
     <dependency>
       <groupId>org.controlsfx</groupId>
       <artifactId>controlsfx</artifactId>
-      <version>8.20.8</version>
+      <version>11.1.2</version>
     </dependency>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
@@ -92,15 +101,59 @@
     </dependency>
     <dependency>
       <groupId>de.jensd</groupId>
-      <artifactId>fontawesomefx</artifactId>
-      <version>8.9</version>
+      <artifactId>fontawesomefx-commons</artifactId>
+      <version>9.1.2</version>
     </dependency>
-
+    <dependency>
+      <groupId>com.teamdev.jxbrowser</groupId>
+      <artifactId>jxbrowser-cross-platform</artifactId>
+      <version>7.35.2</version>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>com.teamdev.jxbrowser</groupId>
+      <artifactId>jxbrowser-javafx</artifactId>
+      <version>7.35.2</version>
+    </dependency>
+    <dependency>
+      <groupId>de.jensd</groupId>
+      <artifactId>fontawesomefx-materialdesignfont</artifactId>
+      <version>2.0.26-9.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>de.jensd</groupId>
+      <artifactId>fontawesomefx-fontawesome</artifactId>
+      <version>4.7.0-9.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>21</version> <!-- or the version you are using -->
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>21</version> <!-- or the version you are using -->
+    </dependency>
   </dependencies>
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>repackage</id>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+            <configuration>
+              <classifier>exec</classifier>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
-
 </project>
